@@ -1,7 +1,7 @@
 import mongoClient from "mongoose";
 
 const userModel = new mongoClient.Schema({
-    name : {type: String},
+    username : {type: String},
     password : {type : String}
 })
 
