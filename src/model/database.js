@@ -1,10 +1,18 @@
-import mongoClient from "mongoose";
+import mongoClient, { model } from "mongoose";
+import userModel from "./userModel";
 
 const URL = process.env.MONGO_URL;
 
-export const initializeDatabaseSystem = () => {
-  mongoClient
-    .connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.info("Database connected"))
-    .catch(console.error)
+export const initializeDatabaseSystem = async () => {
+  try {
+    await mongoClient.connect(URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+  } catch (error) {
+    console.error;
+  }
 };
+
+export const UserModel = model("User", userModel);
+export default mongoClient;

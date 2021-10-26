@@ -1,11 +1,8 @@
-import { Schema } from "mongoose";
-import moongose from "moongose";
+import mongoClient from "mongoose";
 
-Schema = moongose.Schema;
-
-const userModel = new Schema({
+const userModel = new mongoClient.Schema({
     name : {type: String},
     password : {type : String}
 })
 
-module.exports = mongoose.model("User", userModel);
+export default userModel;
