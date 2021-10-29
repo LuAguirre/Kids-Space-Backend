@@ -10,7 +10,7 @@ export const createUser = async (req, res) => {
   } catch (error) {
       console.error(error)
     res.status =  403;
-    res.send('Valida tu usuario y contraseña');
+    res.send('problemas para crear el usuario');
   }
     
 }
